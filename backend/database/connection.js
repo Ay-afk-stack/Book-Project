@@ -2,7 +2,6 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
 const bookModel = require("./models/book.model");
-const userModel = require("./models/user.model");
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -22,7 +21,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.Book = bookModel(sequelize, DataTypes);
-db.User = userModel(sequelize, DataTypes);
 
 //Migration code
 sequelize
