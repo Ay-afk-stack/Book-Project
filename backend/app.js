@@ -3,6 +3,7 @@ require("./database/connection");
 
 const express = require("express");
 const app = express();
+const port = process.env.PORT;
 
 //Logic to Fetch books from database
 app.get("/books", (req, res) => {
@@ -30,6 +31,6 @@ app.patch("/books/:id", (req, res) => {
   return res.json({ message: "Book updated successfully!", id });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running at http://localhost:3000");
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
